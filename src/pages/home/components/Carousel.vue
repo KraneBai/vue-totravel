@@ -14,7 +14,9 @@ export default {
   data () {
     return {
       swiperOption: {
-        pagination: '.swiper-pagination',
+        pagination: {
+          el: '.swiper-pagination'
+        },
         loop: true
       },
       imgList: [
