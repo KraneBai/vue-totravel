@@ -1,7 +1,7 @@
 <template>
     <div class="icons-area">
       <swiper :options="swiperOption" ref="mySwiper">
-        <swiper-slide v-for="(page, index) of icons" :key="index">
+        <swiper-slide v-for="(page, index) of pages" :key="index">
           <div class="icon-item" v-for="item of page" :key="item.iconId">
             <div class="icon-img">
               <img :src="item.iconUrl">
@@ -26,7 +26,7 @@ export default {
   computed: {
     pages () {
       const pages = []
-      this.iconList.forEach((item, index) => {
+      this.icons.forEach((item, index) => {
         const page = Math.floor(index / 8)
         if (!pages[page]) {
           pages[page] = []

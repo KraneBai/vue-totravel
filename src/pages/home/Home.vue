@@ -41,7 +41,6 @@ export default {
         .then(this.getHomeInfoSucc)
     },
     getHomeInfoSucc (res) {
-      console.log(res)
       if (res.data.ret && res.data.data) {
         const data = res.data.data
         this.city = data.city
@@ -50,6 +49,7 @@ export default {
         this.recommendList = data.recommendList
         this.articlesList = data.articlesList
       }
+      console.log(this.iconList)
     }
   }
 }
