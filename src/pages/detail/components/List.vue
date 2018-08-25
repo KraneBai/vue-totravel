@@ -6,7 +6,8 @@
       :key="index"
     >
       <div class="item-title border-bottom">
-        <span class="item-title-icon"></span>
+        <!-- <span class="item-title-icon"></span> -->
+        <span class="iconfont">&#xe612;</span>
         {{item.title}}
       </div>
       <div v-if="item.children">
@@ -27,7 +28,7 @@ export default {
 .item-title
   line-height .8rem
   font-size .32rem
-  padding 0 .2rem
+  padding 0 .15rem
   .item-title-icon
     position relative
     top .06rem
