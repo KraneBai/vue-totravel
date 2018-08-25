@@ -14,6 +14,7 @@
 </template>
 <script>
 export default {
+  name: 'HomeIconsArea',
   data () {
     return {
       swiperOption: {},
@@ -95,6 +96,7 @@ export default {
 @import '~styles/mixin.styl'
 .icons-area
   .swiper-container
+    margin-top .1rem
     overflow: hidden
     height: 0
     padding-bottom: 50%
