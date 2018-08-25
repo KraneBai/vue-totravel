@@ -42,7 +42,7 @@ export default {
   activated () {
     window.addEventListener('scroll', this.handleScroll)
   },
-  // 页面即将被替换的时候触发 keeo-alive
+  // 页面即将被替换的时候触发 keep-alive
   // 对全局事件进行解绑
   deactivated () {
     window.removeEventListener('scroll', this.handleScroll)
