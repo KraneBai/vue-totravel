@@ -19,8 +19,14 @@ export default {
   },
   data () {
     return {
-      touchStatus: false
+      touchStatus: false,
+      startY: 0,
+      timer: null
     }
+  },
+  // 页面完成了自己的渲染
+  updated () {
+    this.startY = this.$refs['A'][0].offsetTop
   },
   computed: {
     letters () {
@@ -43,10 +49,15 @@ export default {
     },
     touchMove (e) {
       if (this.touchStatus) {
-        const startY = this.$refs['A'][0].offsetTop
-        const touchY = e.touches[0].clientY - 79
-        const index = Math.floor((touchY - startY) / 20)
-        this.$emit('change', this.letters[index])
+        if (this.timer) {
+          // touchmove的函数节流
+          clearTimeout(this.timer)
+        }
+        this.timer = setTimeout(() => {
+          const touchY = e.touches[0].clientY - 79
+          const index = Math.floor((touchY - this.startY) / 20)
+          this.$emit('change', this.letters[index])
+        }, 16)
       }
     }
   }
