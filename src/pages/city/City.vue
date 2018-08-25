@@ -40,7 +40,6 @@ export default {
         .then(this.getCityInfoSucc)
     },
     getCityInfoSucc (res) {
-      console.log(res)
       res = res.data
       if (res.ret && res.data) {
         this.cities = res.data.cities
