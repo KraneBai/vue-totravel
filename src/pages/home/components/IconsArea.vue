@@ -20,7 +20,9 @@ export default {
   },
   data () {
     return {
-      swiperOption: {}
+      swiperOption: {
+        autoplay: false
+      }
     }
   },
   computed: {
