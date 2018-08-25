@@ -47,7 +47,6 @@ export default {
 @import '~styles/mixin.styl'
 .art-tit
   background #eee
-  margin-top .2rem
   line-height .8rem
   text-indent .2rem
 .item-img-wrapper
