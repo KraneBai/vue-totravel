@@ -7,7 +7,7 @@
         v-for="item of recommend"
         :key="item.id"
         tag="li"
-        to="/detail"
+        :to="'/detail/' + item.id"
       >
         <img class="item-img" :src="item.imgUrl">
         <div class="item-info">
@@ -23,7 +23,12 @@
 export default {
   name: 'HomeRecommend',
   props: {
-    recommend: Array
+    recommend: {
+      type: Array,
+      default () {
+        return []
+      }
+    }
   }
 }
 </script>
