@@ -1,7 +1,7 @@
 <template>
     <div class="icons-area">
       <swiper :options="swiperOption" ref="mySwiper">
-        <swiper-slide v-for="(page, index) of pages" :key="index">
+        <swiper-slide v-for="(page, index) of icons" :key="index">
           <div class="icon-item" v-for="item of page" :key="item.iconId">
             <div class="icon-img">
               <img :src="item.iconUrl">
@@ -15,65 +15,12 @@
 <script>
 export default {
   name: 'HomeIconsArea',
+  props: {
+    icons: Array
+  },
   data () {
     return {
-      swiperOption: {},
-      iconList: [
-        {
-          iconId: '001',
-          iconUrl:
-            'http://images.mafengwo.net/images/app/m/logo_gonglve_v6.png?v=20150825',
-          iconTit: '马蜂窝'
-        },
-        {
-          iconId: '002',
-          iconUrl:
-            'http://images.mafengwo.net/images/app/m/logo_gonglve_v6.png?v=20150825',
-          iconTit: '马蜂窝'
-        },
-        {
-          iconId: '003',
-          iconUrl:
-            'http://images.mafengwo.net/images/app/m/logo_gonglve_v6.png?v=20150825',
-          iconTit: '马蜂窝'
-        },
-        {
-          iconId: '004',
-          iconUrl:
-            'http://images.mafengwo.net/images/app/m/logo_gonglve_v6.png?v=20150825',
-          iconTit: '马蜂窝'
-        },
-        {
-          iconId: '005',
-          iconUrl:
-            'http://images.mafengwo.net/images/app/m/logo_gonglve_v6.png?v=20150825',
-          iconTit: '马蜂窝'
-        },
-        {
-          iconId: '006',
-          iconUrl:
-            'http://images.mafengwo.net/images/app/m/logo_gonglve_v6.png?v=20150825',
-          iconTit: '马蜂窝'
-        },
-        {
-          iconId: '007',
-          iconUrl:
-            'http://images.mafengwo.net/images/app/m/logo_gonglve_v6.png?v=20150825',
-          iconTit: '马蜂窝'
-        },
-        {
-          iconId: '008',
-          iconUrl:
-            'http://images.mafengwo.net/images/app/m/logo_gonglve_v6.png?v=20150825',
-          iconTit: '马蜂窝'
-        },
-        {
-          iconId: '009',
-          iconUrl:
-            'http://images.mafengwo.net/images/app/m/logo_gonglve_v6.png?v=20150825',
-          iconTit: '马蜂窝'
-        }
-      ]
+      swiperOption: {}
     }
   },
   computed: {
